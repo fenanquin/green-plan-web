@@ -4,11 +4,23 @@
   "description": "The web front-end part of green-plan API",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server"
   },
   "author": "Fernando Aquino",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^22.1.4"
+    "jest": "^22.1.4",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.1.0"
   }
 }
