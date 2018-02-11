@@ -1,0 +1,14 @@
+{
+  "name": "green-plan-web",
+  "version": "1.0.0",
+  "description": "The web front-end part of green-plan API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Fernando Aquino",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
