@@ -1,5 +1,6 @@
 import React from 'react';
 import { TransactionListItem } from './transaction-list-item';
+import { connect } from 'react-redux';
 
 export const TransactionList = (props) => (
   <div>
@@ -10,3 +11,9 @@ export const TransactionList = (props) => (
     }
   </div>
 );
+
+const mapStateToProps = (state) => ({
+  transactions: state.transactions
+});
+
+export default connect(mapStateToProps)(TransactionList);
