@@ -1,24 +1,8 @@
-export default (state = transactions, action) => {
+export default (state = [], action) => {
   switch (action.type) {
-
+    case 'SET_TRANSACTIONS':
+      return action.transactions;
     default:
       return state;
   }
 };
-
-const transactions = [{
-  id: 1,
-  description: 'Rent Bill',
-  amount: 100,
-  date: new Date()
-}, {
-  id: 2,
-  description: 'Water Bill',
-  amount: 200,
-  date: new Date()
-}, {
-  id: 3,
-  description: 'Gas Bill',
-  amount: 300,
-  date: new Date()
-}];
