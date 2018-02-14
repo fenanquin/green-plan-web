@@ -1,6 +1,6 @@
 import React from 'react';
 import TransactionList from './transaction-list';
-import { TransactionListFilter } from './transaction-list-filter';
+import TransactionListFilter from './transaction-list-filter';
 
 const TransactionDashboardPage = () => (
   <div>
