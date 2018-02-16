@@ -7,9 +7,10 @@ class TransactionListFilter extends React.Component {
     super(props);
     this.onChangeDateFilter = this.onChangeDateFilter.bind(this);
     let now = new Date();
-    this.state = {
-      dateFilter: `${now.getMonth() + 1}/${now.getFullYear()}`
-    };
+    let currentMonth = now.getMonth() + 1;
+    let dateFilter = `${currentMonth}/${now.getFullYear()}`;
+    dateFilter = currentMonth > 9 ? dateFilter : `0${dateFilter}`;
+    this.state = { dateFilter };
   }
 
   onChangeDateFilter(dateFilter) {
@@ -19,6 +20,7 @@ class TransactionListFilter extends React.Component {
       this.setState({ dateFilter: `${dateFilter}/` });
     } else if (dateFilter.match(/^\d{1,2}\/\d{4}$/)) {
       let parts = dateFilter.split('/');
+      dateFilter = parts[0].length == 1 ? `0${dateFilter}` : dateFilter;
       this.setState({ dateFilter });
       this.props.dispatch(fetchTransactions(parts[0], parts[1]));
       console.log('requested');
