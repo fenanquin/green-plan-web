@@ -28,11 +28,12 @@ export default class TransactionForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log({
+    
+    this.props.onSubmit({
       description: this.state.description,
       date: this.state.date,
       amount: this.state.amount
-    })
+    });
   }
 
   render() {
