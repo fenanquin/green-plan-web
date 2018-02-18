@@ -22,7 +22,7 @@ export const createTransaction = (transaction = {}) => {
     let url = 'http://localhost:4000/transactions';
     return fetch(url, {headers: header, method: 'POST', body: JSON.stringify(transaction)})
       .then(res => res.json())
-      .then(() => dispatch(addTransaction(transaction)));
+      .then((responseBody) => dispatch(addTransaction(responseBody)));
   };
 };
 
