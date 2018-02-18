@@ -9,7 +9,7 @@ const AppRouter = () => (
     <Switch>
       <Route path='/' component={TransactionDashboardPage} exact={true} />
       <Route path='/create' component={AddTransactionPage} />
-      <Route path='/edit' component={EditTransactionPage} />
+      <Route path='/edit/:id' component={EditTransactionPage} />
     </Switch>
   </BrowserRouter>
 );

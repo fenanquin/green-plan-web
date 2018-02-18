@@ -8,9 +8,9 @@ export default class TransactionForm extends React.Component {
     this.onDateChange = this.onDateChange.bind(this);
     this.onAmountChange = this.onAmountChange.bind(this);
     this.state = {
-      description: '',
-      date: new Date(),
-      amount: ''
+      description: props.description ? props.description : '',
+      date: props.date ? props.date : new Date(),
+      amount: props.amount ? props.amount : ''
     }
   }
 
@@ -28,7 +28,7 @@ export default class TransactionForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
+
     this.props.onSubmit({
       description: this.state.description,
       date: this.state.date,

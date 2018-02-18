@@ -7,6 +7,21 @@ export default (state = [], action) => {
         ...state,
         action.transaction
       ];
+    case 'EDIT_TRANSACTION':
+      return state.map((transaction) => {
+        if (transaction.id === action.id) {
+          return {
+            ...transaction,
+            ...action.updates
+          };
+        } else {
+          return transaction;
+        }
+      });
+    case 'REMOVE_TRANSACTION':
+      return state.filter((transaction) => {
+        return transaction.id !== action.id
+      });
     default:
       return state;
   }
